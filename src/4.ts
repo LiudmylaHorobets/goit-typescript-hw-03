@@ -47,11 +47,11 @@ abstract class House {
       this.tenants.push(person);
     }
   }
-  abstract OpenDoor(key: Key): void;
+  abstract openDoor(key: Key): void;
 }
 
 class MyHouse extends House {
-  OpenDoor(key: Key): void {
+  openDoor(key: Key): void {
     if (key.getSignature() === this.key.getSignature()) {
       this.door = true;
     }
