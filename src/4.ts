@@ -26,6 +26,7 @@ class Key {
     return this.signature;
   }
 }
+
 class Person {
   constructor(private key: Key) {}
 
@@ -40,6 +41,7 @@ abstract class House {
 
   constructor(public key: Key) {
     this.door = false;
+    this.tenants = [];
   }
 
   comeIn(person: Person) {
@@ -47,6 +49,7 @@ abstract class House {
       this.tenants.push(person);
     }
   }
+
   abstract openDoor(key: Key): void;
 }
 
